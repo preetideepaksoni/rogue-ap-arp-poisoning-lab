@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<!--
+    Fake WiFi Captive Portal - Educational Lab Only
+    Author: Preeti Deepak Soni
+    Purpose: Demonstrate captive portal phishing technique
+    For educational use in authorized lab environments only
+
+    This is a sample fake WiFi login page that demonstrates how attackers
+    create convincing captive portals to harvest credentials.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free WiFi Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-container {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            padding: 30px 40px;
+            max-width: 380px;
+            width: 100%;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 22px;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            background: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4285f4;
+            background: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #4285f4;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            background: #3367d6;
+        }
+
+        .red-bar {
+            height: 3px;
+            background: #ea4335;
+            margin-bottom: 25px;
+            border-radius: 2px;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 11px;
+            color: #999;
+        }
+
+        .lab-warning {
+            background: #fff3cd;
+            border-left: 3px solid #ffc107;
+            padding: 10px 15px;
+            margin-top: 20px;
+            border-radius: 3px;
+            font-size: 11px;
+            color: #856404;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="red-bar"></div>
+
+        <h2>Free WiFi Login</h2>
+
+        <!--
+            EDUCATIONAL LAB FORM
+            This form simulates the captive portal used in the lab assessment.
+            In real attacks, captured credentials would be sent to attacker.
+            For lab purposes, credentials are monitored via Ettercap and tcpflow.
+        -->
+        <form action="/login" method="POST" id="wifiLoginForm">
+            <div class="form-group">
+                <input type="text" id="username" name="username"
+                       placeholder="Username or phone number"
+                       required autocomplete="off">
+            </div>
+
+            <div class="form-group">
+                <input type="password" id="password" name="password"
+                       placeholder="Password"
+                       required autocomplete="off">
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="lab-warning">
+            <strong>⚠️ Educational Lab Notice:</strong><br>
+            This is a demonstration of captive portal phishing techniques used in
+            wireless security assessments. Do NOT enter real credentials.
+            Authorized lab testing only.
+        </div>
+
+        <div class="footer">
+            <p>Free Public WiFi | Powered by Lab Environment</p>
+        </div>
+    </div>
+</body>
+</html>
